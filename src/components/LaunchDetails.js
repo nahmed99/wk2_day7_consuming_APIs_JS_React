@@ -1,6 +1,15 @@
-const LaunchDetails = () => {
+const LaunchDetails = ({launch}) => {
+
+  // Don't render LaunchDetails unless launch has some data
+  if (!launch) {
+    return null;
+  }
+
   return (
-    <p>Launch details will go here!</p>
+    <>
+      <h3>{launch.mission_name}</h3>
+      <p>Rocket: {launch.rocket.rocket_name}</p>
+    </>
   )
 };
 
